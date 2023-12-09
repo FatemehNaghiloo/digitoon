@@ -1,4 +1,4 @@
-package com.vahid.digitoon
+package com.fatemeh.digitoon
 
 import org.junit.Test
 
