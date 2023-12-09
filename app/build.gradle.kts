@@ -58,6 +58,7 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
     implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
+    debugImplementation ("com.github.chuckerteam.chucker:library:4.0.0")
 
     implementation("io.reactivex.rxjava2:rxjava:2.2.20")
     implementation("io.reactivex.rxjava2:rxandroid:2.1.1")

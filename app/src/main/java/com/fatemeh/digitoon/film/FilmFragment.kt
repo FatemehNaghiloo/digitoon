@@ -1,6 +1,7 @@
 package com.fatemeh.digitoon.film
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,6 +46,7 @@ class FilmFragment : Fragment() {
         filmViewModel.filmsLiveData.observe(viewLifecycleOwner) {
             val filmAdapter = it.search?.let { it1 ->
                 FilmAdapter(it1) { imdbId ->
+                    Log.d("zzz", "setupViews: $imdbId")
                     val action = FilmFragmentDirections.actionFilmFragmentToDetailFragment(imdbId)
                     findNavController().navigate(action)
                 }

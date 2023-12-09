@@ -1,6 +1,7 @@
 package com.fatemeh.digitoon
 
 import android.app.Application
+import android.content.Context
 import android.os.StrictMode
 import androidx.room.Room
 import com.fatemeh.digitoon.detail.DetailViewModel
@@ -19,7 +20,7 @@ import org.koin.dsl.module
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
-
+        application = this
         val myModules = module {
             single { createApiServiceInstance() }
             single { Room.databaseBuilder(this@App, AppDatabase::class.java, "db_app").build() }
@@ -47,4 +48,12 @@ class App : Application() {
         StrictMode.setThreadPolicy(policy)
     }
 
+    companion object {
+        lateinit var application: Application
+
+        fun getMyApplicationContext(): Context {
+            return application.applicationContext
+        }
+
+    }
 }

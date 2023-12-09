@@ -7,7 +7,7 @@ import io.reactivex.Single
 
 class DetailRemoteDataSource(private val apiService: ApiService) : DetailDataSource {
 
-    override fun getDetail(id:String): Single<Detail> = apiService.getDetail(id)
+    override fun getDetail(id:String): Single<Detail> = apiService.getDetail("3e974fca",id)
 
     override fun insertDetail(detail: Detail): Completable {
         TODO("Not yet implemented")

@@ -12,12 +12,12 @@ class DetailRepositoryImpl(
 
     override fun getDetail(id: String): Single<Detail> {
 
-        return if (isInternetReachable())
-            remoteDataSource.getDetail(id).
+//        return if (isInternetReachable())
+           return remoteDataSource.getDetail(id).
             doOnSuccess { detail -> insertDetail(detail) }
 
-        else
-            localDataSource.getDetail(id)
+//        else
+//            localDataSource.getDetail(id)
 
     }
 

@@ -18,6 +18,7 @@ class DetailViewModel(imdbId: String, detailRepository: DetailRepository) : View
     val progressBarLiveData= MutableLiveData<Boolean>()
 
     init {
+        Log.d("ggg", "sss:$imdbId ")
         progressBarLiveData.value = true
         detailRepository.getDetail(imdbId)
             .subscribeOn(Schedulers.io())
